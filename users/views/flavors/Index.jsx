@@ -8,7 +8,7 @@ class Index extends React.Component {
     render() {
 
         return (
-            <DefaultLayout title={"You've made it to the Fun Zone!"}>
+            <DefaultLayout title={"Pleez take your time here"}>
                 <nav>
                     <a href="/flavors/new">DEEZ COOL FLAVORS</a>  
                 </nav>

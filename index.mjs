@@ -32,7 +32,7 @@ profile.use('/users', userRoutes);
 profile.get('/', function(req, res) {
   let content =  `
       <div style="text-align: center;">
-          <p style="font-size: 24px; margin-top: 100px;">GET READY TO ENTER THE FUN ZONE</p>
+          <p style="font-size: 24px; margin-top: 100px;">YOU ARE ABOUT TO ENTER THE SNOW CONE ZONE</p>
           <br/>
           <a href='/flavors' style="display: block;">Flavors</a>
           <a href='/toppings' style="display: block;">Toppings</a>
