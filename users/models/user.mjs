@@ -1,28 +1,26 @@
 import mongoose from 'mongoose';
 
-// Define your user schema
+// Defining user schema
 const userSchema = new mongoose.Schema({
-  name: {
+  username: {
     type: String,
     required: true
-  },
-  address: {
-    type: String,
-    required: false
-  },
-  phoneNumber: {
-    type: String,
-    required: true
-  },
-  email: {
-    type: String,
-    required: true
-  },
-  password: {
+},
+roles: {
+    User: {
+        type: Number,
+        default: 2001
+    },
+    Editor: Number,
+    Admin: Number
+},
+password: {
     type: String,
     required: true
-  }
+},
+refreshToken: String
 });
+
 
 // Create and export your user model
 const User = mongoose.model('User', userSchema);

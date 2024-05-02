@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import jsxViewEngine from 'jsx-view-engine';
 import methodOverride from 'method-override';
-import db from './users/db/conn.mjs';
+import db from './users/config/conn.mjs';
 import flavorRoutes from './users/controllers/flavor.mjs';
 import toppingRoutes from './users/controllers/topping.mjs';
 import userRoutes from './users/controllers/user.mjs';
