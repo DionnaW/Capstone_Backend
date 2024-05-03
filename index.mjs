@@ -3,7 +3,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import jwt from 'jsonwebtoken';
 dotenv.config();
 import jsxViewEngine from 'jsx-view-engine';
 import methodOverride from 'method-override';
@@ -11,6 +10,8 @@ import db from './users/config/conn.mjs';
 import flavorRoutes from './users/controllers/flavor.mjs';
 import toppingRoutes from './users/controllers/topping.mjs';
 import userRoutes from './users/controllers/user.mjs';
+import cors from 'cors';
+
 
 //express application for the Login/Profile 
 const profile = express();
@@ -24,13 +25,14 @@ profile.engine('jsx', jsxViewEngine());
 //=====middleware
 profile.use(express.urlencoded({extended: false}))
 profile.use(methodOverride('_method'));
+profile.use(cors());
 
 //===routes====
 profile.use('/flavors', flavorRoutes);
 profile.use('/toppings', toppingRoutes);
-profile.use('/users', userRoutes); 
+profile.use('/user', userRoutes); 
 
-profile.get('/', function(req, res) {
+profile.get('/', (req, res) => {
   let content =  `
       <div style="text-align: center;">
           <p style="font-size: 24px; margin-top: 100px;">YOU ARE ABOUT TO ENTER THE SNOW CONE ZONE</p>

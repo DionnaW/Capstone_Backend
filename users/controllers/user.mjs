@@ -6,6 +6,7 @@ import User from '../models/user.mjs';
 // C - CREATE - Route to create a new user
 router.post('/user', async (req, res) => {
   try {
+    console.log('Request body:', req.body); //CHECKING FOR ERRORS
     const newUser = await User.create(req.body);
     res.status(201).json(newUser);
   } catch (error) {

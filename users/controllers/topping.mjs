@@ -2,6 +2,20 @@ import express from 'express';
 const router = express.Router();
 import Topping from '../models/topping.mjs';
 
+// GET /toppings - Get all toppings
+router.get('/', async (req, res) => {
+  try {
+    // Fetch all toppings from the database
+    const toppings = await Topping.find();
+
+    // Return the toppings as a JSON response
+    res.json(toppings);
+  } catch (error) {
+    // Return an error response
+    res.status(500).json({ error: 'An error occurred' });
+  }
+});
+
 // POST /toppings/seed - Seeding toppings to the database
 router.post('/seed', async (req, res) => {
   try {
@@ -28,16 +42,6 @@ router.post('/seed', async (req, res) => {
     // Return an error response
     res.status(500).json({ error: 'An error occurred' });
   }
-  // / GET /toppings - Fetch all toppings from the database
-    router.get('/', async (req, res) => {
-     try {
-      // Fetching logic here
-      res.send('All toppings fetched');
-    } catch (error) {
-      res.status(500).json({ error: 'An error occurred' });
-    }
-    
-  });
 
   
 });
