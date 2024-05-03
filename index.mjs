@@ -3,6 +3,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
 dotenv.config();
 import jsxViewEngine from 'jsx-view-engine';
 import methodOverride from 'method-override';

@@ -28,5 +28,17 @@ router.post('/seed', async (req, res) => {
     // Return an error response
     res.status(500).json({ error: 'An error occurred' });
   }
+  // / GET /toppings - Fetch all toppings from the database
+    router.get('/', async (req, res) => {
+     try {
+      // Fetching logic here
+      res.send('All toppings fetched');
+    } catch (error) {
+      res.status(500).json({ error: 'An error occurred' });
+    }
+    
+  });
+
+  
 });
 export default router;

@@ -4,4 +4,4 @@ const allowedOrigins = [
     'http://localhost:4000'
 ];
 
-module.exports = allowedOrigins;
+export default allowedOrigins;
