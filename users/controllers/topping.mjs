@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 });
 
 // POST /toppings/seed - Seeding toppings to the database
-router.post('/seed', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     // Array of topping names to seed
     const toppingNames = [

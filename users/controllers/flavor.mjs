@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 });
 
 // POST /flavors/seed - Seed flavors to the database
-router.post('/seed', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     // Array of flavor names to seed
     const flavorNames = [

@@ -1,12 +1,8 @@
 import mongoose from 'mongoose';
 
-// Defining user schema
+// User model schema
 const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  email: {
+  username: {
     type: String,
     required: true,
     unique: true
@@ -15,15 +11,18 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  role: {
+  email: {
     type: String,
-    enum: ['user', 'admin'],
-    default: 'user'
+    required: true,
+    unique: true
+  },
+  isAdmin: {      // DEFAULT & INDICATES IF A USER IS ADMIN OR NOT
+    type: Boolean,
+    default: false
   }
 });
 
-
-// Create and export your user model
+// Create and export user model
 const User = mongoose.model('User', userSchema);
 
 export default User;
