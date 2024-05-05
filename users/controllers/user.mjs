@@ -3,10 +3,11 @@ const router = express.Router();
 import User from '../models/user.mjs';
 
 // Route to create a new user account || POST/user allows users to create an account
-router.post('/user', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     // Create a new user based on the request body
     const newUser = await User.create(req.body);
+    console.log(newUser);
     res.status(201).json(newUser);
   } catch (error) {
     res.status(500).json({ error: 'Failed to create user' });

@@ -16,10 +16,10 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  isAdmin: {      // DEFAULT & INDICATES IF A USER IS ADMIN OR NOT
-    type: Boolean,
-    default: false
-  }
+  // isAdmin: {      // DEFAULT & INDICATES IF A USER IS ADMIN OR NOT
+    // type: Boolean,
+    // default: false
+  // }
 });
 
 // Create and export user model

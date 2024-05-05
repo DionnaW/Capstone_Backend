@@ -44,10 +44,6 @@ profile.get('/', (req, res) => {
   res.send(content);
 });
 
-// profile.get('/', function(req, res) {
-    // let content =  `<div>GET READY TO ENTER THE SNOW CONE ZONE <br/><a href='/flavors'>Flavors</a> <br/><a href='/toppings'>Toppings</a></div>`   
-    // res.send(content);
-// })
 
 profile.listen(PORT, () => {
     console.log(`port is listening`);
