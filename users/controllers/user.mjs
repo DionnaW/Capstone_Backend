@@ -4,6 +4,7 @@ import User from '../models/user.mjs';
 
 // Route to create a new user account || POST/user allows users to create an account
 router.post('/', async (req, res) => {
+  // console.log(req.body);  only to check why user wasnt created
   try {
     // Create a new user based on the request body
     const newUser = await User.create(req.body);
@@ -47,75 +48,5 @@ router.get('/admin/user', async (req, res) => {
   }
 });
 
-
-//================================================================ANOTHER ROUTE TO TEST
-// Index - get all users
-// router.get('/', async (req, res) => {
-  // try {
-      // const foundUsers = await User.find({});
-      // res.status(200).render('users/Index', { users: foundUsers});
-  // } catch (error) {
-      // res.status(400).send(error);
-  // }
-// });
-
-// New - form to create a new user
-// router.get('/new', (req, res) => {
-  // res.render('users/New');
-// });
-
-// Create - create a New User 
-// router.post('/', async (req, res) => {
-  // try {
-      // const createdUser = await User.create(req.body);
-      // res.status(200).send(createdUser);
-  // } catch (error) {
-      // res.status(400).send(error);
-  // }
-// });
-
-// Show - show a specific user
-// router.get('/:id', async (req, res) => {
-  // try {
-      // const foundUser = await User.findById(req.params.id);
-      // res.render('users/Show', { user: foundUser });
-  // } catch (error) {
-      // res.status(400).send(error);
-  // }
-// });
-
-// Edit - form to edit a specific user
-// router.get("/:id/edit", async (req, res) => {
-  // try {
-      // const foundUser = await User.findById(req.params.id);
-      // res.status(200).render('users/Edit', { user: foundUser });
-  // } catch (error) {
-      // res.status(400).send(error);
-  // }
-// });
-
-// Update - update a specific user
-// router.put('/:id', async (req, res) => {
-  // try {
-      // const updatedUser = await User.findByIdAndUpdate(
-          // req.params.id,
-          // req.body,
-          // { new: true },
-      // );
-      // res.redirect(`/users/${req.params.id}`);
-  // } catch (error) {
-      // res.status(400).send(error);
-  // }
-// });
-// 
-// Delete - delete a specific user
-// router.delete('/:id', async (req, res) => {
-  // try {
-      // await User.findByIdAndDelete(req.params.id);
-      // res.redirect('/users');
-  // } catch (error) {
-      // res.status(400).send(error);
-  // }
-// });
 
 export default router;

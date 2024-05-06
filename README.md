@@ -5,5 +5,6 @@ I've created a users collection for my api. In my users folder I have my compone
 GET routes is wroking for flavord and toppings
 POST route working for flavors
 Still trying to get POST and GET routes to work
+I am done with the backend! I had to use x-www-form-urlencoded to POST user to my mongo database. Everything is connecting properly to the backend!
 
 

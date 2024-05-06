@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
     // Create an array of flavor objects with names and empty colors
     const flavorsToSeed = flavorNames.map(name => ({
       name,
-      color: '' // Empty color, to be filled later IF I decide to use colors
+      color: '' // Empty color, to be filled later When I do the final design that I'll have on this
     }));
 
     // Insert the flavors into the database
